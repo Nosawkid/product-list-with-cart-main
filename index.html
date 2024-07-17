@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Javascript Shopping Cart</title>
+  </head>
+  <body class="bg-customRose-100 p-14 relative">
+    <main
+      role="main"
+      class="container mx-auto flex flex-col md:flex-row items-start justify-center"
+    >
+      <div id="items-container" class="w-full md:w3/5">
+        <h1 class="text-left font-bold text-4xl text-customRose-900">
+          Desserts
+        </h1>
+
+        <div
+          id="desserts-container"
+          class="grid grid-cols-1 md:grid-cols-3 gap-6"
+        ></div>
+      </div>
+
+      <div id="price-section" class="w-full md:w-2/5 px-2 md:px-5 py-4">
+        <div id="cart" class="bg-white py-5 px-3 rounded-lg">
+          <h3 class="text-lg font-bold text-customRed mb-5">
+            Your Cart <span id="item-count"></span>
+          </h3>
+          <div
+            id="cart-items-display"
+            class="flex flex-col space-y-3 mb-3"
+          ></div>
+          <div id="total-price-details-container" class="px-6 hidden">
+            <div id="total-price-details" class="flex justify-between">
+              <p class="text-sm text-gray-500">Order Total</p>
+              <p
+                id="total-price-checkout"
+                class="font-bold text-lg text-customRose-900"
+              ></p>
+            </div>
+            <div
+              id="message"
+              class="flex justify-center gap-3 bg-customRose-100 py-3 mt-2"
+            >
+              <img
+                src="./assets/images/icon-carbon-neutral.svg"
+                alt="Carbon neutral"
+              />
+              <p>This is a <strong>Carbon Neutral</strong> Delivery</p>
+            </div>
+            <button
+              id="confirm-oder-btn"
+              class="block mx-auto mt-4 bg-customRed text-white py-3 px-4 w-full rounded-full"
+            >
+              Confirm Order
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div
+      id="modal"
+      class="bg-white w-1/2 rounded-lg p-6 space-y-3 absolute top-72 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 hidden"
+    >
+      <img src="./assets/images/icon-order-confirmed.svg" alt="" />
+      <h1 class="text-customRose-900 font-bold text-4xl">Order Confirmed</h1>
+      <p class="text-sm text-gray-400">We hope you enjoy your food</p>
+      <div id="confirmation-container" class="overflow-y-scroll h-80"></div>
+      <button
+        id="new-oder-btn"
+        class="block mx-auto mt-4 bg-customRed text-white py-3 px-4 w-full rounded-full"
+      >
+        Start New Order
+      </button>
+    </div>
+
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
